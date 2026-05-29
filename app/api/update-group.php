@@ -1,8 +1,8 @@
 <?php
 
 header('Content-Type: application/json');
-require_once __DIR__ . '/../app/models/Group.php';
-require_once __DIR__ . '/../app/models/GroupRule.php';
+require_once __DIR__ . '/../models/Group.php';
+require_once __DIR__ . '/../models/GroupRule.php';
 $data = json_decode(file_get_contents("php://input"), true);
 
 $groupId = $data['group_id'] ?? 0;

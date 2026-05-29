@@ -13,8 +13,10 @@
         <a  href="groups.php" class="navbar-brand">Rule Assignment</a>
 
         <div>
-            <a href="groups.php" class="btn btn-outline-light btn-sm me-2">View Groups</a>
-            <a href="index.php" class="btn btn-outline-light btn-sm" >Create Group</a>
+            <a href="groups" class="btn btn-outline-light btn-sm me-2">View Groups</a>
+            <a href="create" class="btn btn-outline-light btn-sm" >Create Group</a>
         </div>
     </div>
 </nav>
+
+

@@ -64,7 +64,7 @@ include 'layout/header.php';
             Update Group
         </button>
 
-        <a href="groups.php" class="btn btn-secondary">
+        <a href="groups" class="btn btn-secondary">
             Back
         </a>
 

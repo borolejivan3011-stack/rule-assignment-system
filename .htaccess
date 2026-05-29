@@ -1,0 +1,20 @@
+RewriteEngine On
+
+# Home Page
+RewriteRule ^$ index.php?page=create [L,QSA]
+
+# Create Page
+RewriteRule ^create/?$ index.php?page=create [L,QSA]
+
+# Group Listing
+RewriteRule ^groups/?$ index.php?page=groups [L,QSA]
+
+# Edit Group
+RewriteRule ^edit/?$ index.php?page=edit [L,QSA]
+
+# Prevent rewriting existing files/folders
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Custom 404
+RewriteRule .* index.php?page=404 [L]

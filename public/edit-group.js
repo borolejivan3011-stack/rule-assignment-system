@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 function loadRules()
 {
-    $.getJSON('./api/get-rules.php', function(data){
+    $.getJSON('./app/api/get-rules.php', function(data){
         rules = data;
         $('#rule_id').html('<option value="">Select Rule</option>'
         );
@@ -33,7 +33,7 @@ function loadRules()
 function loadGroupDetails()
 {
     var groupId = $('#group_id').val();
-    $.getJSON('./api/get-groups.php', function(groups){
+    $.getJSON('./app/api/get-groups.php', function(groups){
         var selectedGroup = groups.find(function(group){
             return group.group_id == groupId;
         });
@@ -47,7 +47,7 @@ function loadGroupDetails()
 
     });
 
-    $.getJSON('./api/get-group.php?group_id='+groupId, function(data){
+    $.getJSON('./app/api/get-group.php?group_id='+groupId, function(data){
 
         assignedRules = [];
         $.each(data, function(index, rule){
@@ -154,7 +154,7 @@ function updateGroup()
     };
 
     $.ajax({
-        url : './api/update-group.php',
+        url : './app/api/update-group.php',
         type : 'POST',
         contentType : 'application/json',
         data : JSON.stringify(payload),
@@ -163,7 +163,7 @@ function updateGroup()
         {            alert(response.message);
             if(response.status)
             {
-                window.location.href = 'groups.php';
+                window.location.href = './groups';
             }
         }
 

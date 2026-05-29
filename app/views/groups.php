@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 function loadGroups()
 {
-    $.getJSON('./api/get-groups.php', function(data){
+    $.getJSON('./app/api/get-groups.php', function(data){
 
         var html = '';
 
@@ -57,7 +57,7 @@ function loadGroups()
             html += '</td>';
 
             html += '<td>';
-            html += '<a href="edit-group.php?group_id='+group.group_id+'" class="btn btn-warning btn-sm">';
+            html += '<a href="edit?group_id='+group.group_id+'" class="btn btn-warning btn-sm">';
             html += 'Edit';
             html += '</a>';
             html += '</td>';
@@ -78,7 +78,7 @@ function loadGroups()
 
 function loadHierarchy(groupId)
 {
-    $.getJSON('./api/get-group.php?group_id='+groupId, function(data){
+    $.getJSON('./app/api/get-group.php?group_id='+groupId, function(data){
 
         var html = '';
 

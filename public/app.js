@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 function loadRules()
 {
-    $.getJSON('./api/get-rules.php', function(data){
+    $.getJSON('./app/api/get-rules.php', function(data){
         rules = data;
         $('#rule_id').html(
             '<option value="">Select Rule</option>'
@@ -146,7 +146,7 @@ function saveGroup()
     };
 
     $.ajax({
-        url : './api/save-group.php',
+        url : './app/api/save-group.php',
         type : 'POST',
         contentType : 'application/json',
         data : JSON.stringify(payload),
@@ -155,7 +155,7 @@ function saveGroup()
             alert(response.message);
             if(response.status)
             {
-                window.location.href = 'groups.php';
+               window.location.href = './groups';
             }
         }
 
