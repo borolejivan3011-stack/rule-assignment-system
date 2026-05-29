@@ -1,103 +1,88 @@
 # Rule Assignment System
 
-This project is developed using object-oriented Core PHP and MySQLi.
-The purpose of this assignment is to manage hierarchical rule assignments inside groups with tier based validation.
+This project is developed in Core PHP using object oriented approach.
+The objective of this assignment is to create and manage hierarchical rule assignments inside groups. A group can have multiple rules and rules can be linked using parent-child relationships up to 3 levels.
 
----
+## Technology Used
+  PHP 8
+  MySQL
+  jQuery
+  AJAX
+  Bootstrap 5
 
-## Technologies Used
+## Modules Covered
+  Create Group
+  Assign Rules
+  View Groups
+  Edit Group
+  Hierarchy View
+  Tier Validation
 
-PHP 8
-MySQL / MySQLi
- jQuery
-Bootstrap 5
-AJAX
+## Folder Structure
+rule_assignment/
+app/
+    api/
+    controllers/
+    services/
+    models/
+    core/
+    database/
+    views/
 
----
+public/
 
-## Features
-
-Create Group
-Assign Rules
-Parent Child Rule Structure
-Maximum 3 Tier Validation
-View Saved Groups
-Edit Existing Groups
-Hierarchical Rule Display
-
----
-
-## Project Structure
-
-rule_assignment/ 
-api/ 
-
-app/ 
-	controllers/ 
-	services/ 
-	models/ 
-	core/ 
-	
-database/ 
-layout/ 
-public/ 
-
-index.php 
-groups.php 
-edit-group.php 
+index.php
 README.md
 
----
 
 ## Database Tables
-# groups
 
-Stores group information.
-# rules
-Stores predefined rules.
-# group_rules
-Stores hierarchical parent-child rule assignments.
+### groups
+Stores group details.
+
+### rules
+Stores master rules used in the system.
+
+### group_rules
+Stores assigned rules and hierarchy information.
 
 ## ER Diagram
-Simple ER diagram is added inside the database folder for reference.
-File: database/ERD.docx
+ER diagram file is available inside:
+app/database/ERD.docx
 
 
-## Validation Rules
- Maximum 3 tiers allowed
- Duplicate rules under same parent are restricted
- Rules are assigned using parent-child relationship
- Rules can be reused in different hierarchy levels
+## Validations Implemented
 
----
+  Maximum 3 tiers allowed
+  Duplicate rule under same parent is not allowed
+  Parent child hierarchy maintained using parent_rule_id
+  Rules are displayed in assigned order
 
-## Pages
+## Application Flow
+For create/update operations:
+API -> Controller -> Service -> Model -> Database
 
-# index.php
-Used to create new groups and assign rules.
 
-# groups.php
-Displays saved groups with hierarchy structure.
+For simple listing operations:
 
-# edit-group.php
-Used to update existing group assignments.
 
----
+API -> Model -> Database
 
-## Run Project
 
-1. Import database/schema.sql
-2. Place project inside xampp/htdocs/
-3. Start Apache and MySQL
-4. Open below URL
+## Running the Project
+
+1. Import schema.sql file from database folder.
+2. Copy project inside htdocs folder.
+3. Start Apache and MySQL from XAMPP.
+4. Open below URL.
+
+
 http://localhost/rule_assignment/
 
 
----
-
 ## Notes
 
- Backend logic is implemented using object-oriented PHP structure.
- jQuery AJAX is used for frontend interaction.
- Bootstrap is used only for UI styling.
- No third-party backend framework is used in this project.
+  This project is developed without using any PHP framework.
+  jQuery is used for AJAX requests and UI interactions.
+  Bootstrap is used only for basic UI design.
+  Controller and Service layers are used for business operations like create and update.
